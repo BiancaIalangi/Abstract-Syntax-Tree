@@ -1,0 +1,44 @@
+"COPYRIGHT 2020"
+IALANGI BIANCA - ELENA
+321CA
+
+----------------------Abstract-Syntax-Tree--------------------------------------------------------------------------
+
+IOCLA_ATOI : 
+
+***sursa de inspiratie*** 
+https://gist.github.com/tnewman/63b64284196301c4569f750a08ef52b2
+
+-> se verifica daca numarul rezultat trebuie sa fie unul negativ, in cazul in care trebuie sa fie
+unul negativ se sare peste caracterul '-'
+
+number:  
+-> se face interpretarea in integer in modul a valorii sirului de caractere
+negative: 
+-> in cazul in care numarul interpretat trebuie sa fie unul negativ, se face neg in registrul in 
+care se afla interpretarea in integer
+
+REVERSE:
+
+-> se va face swap intre cifrele aflate in pozitiile extreme (ex:  1234  -> 4231 , 4231 -> 4321);
+pentru a putea face acest lucru, loop-ul se va executa in (lungime_string/2) pasi
+
+CREATE_TREE:
+
+-> intoarce stringul
+-> se gaseste primul operator sau numar cu ajutorul functiei strtok
+
+integer: 
+-> in cazul in care functia strtok extrage un integer, se face reverse la numar (deoarece efectuarea
+functiei revers intregului sir de caractere a avut drept consecinta intoarcerea numerelor, ca de
+exemplu -31 a devenit 13-)
+-> se aloca spatiul unui integer pentru crearea nodului si numarului se salveaza, punandu-se pe stiva
+operator:
+-> in cazul in care functia strtok extrage un operator, se aloca spatiul pentru data (char* data),
+pentru nodul drept (Node *right) si pentru nodul stang (Node *left). In nodurile create se adauga
+informatie: operatorul, subarborele drept si subarborele stang.
+extract:
+-> se extrage urmatorul numar sau operator cu ajutorul functiei strtok, si se repeta pasii descrisi
+mai sus pana cand se va ajunge la finalul string-ului (NULL reprezentand 0 in ASCII)
+
+----------------------Abstract-Syntax-Tree--------------------------------------------------------------------------
