@@ -33,8 +33,8 @@ iocla_atoi:
 
 number:
 	mov		dl, byte[ecx]
-									; cifrele apartin in intervalul ascii [48, 57]
-	cmp		dl, 48					; se verifica daca este cifra
+							; cifrele apartin in intervalul ascii [48, 57]
+	cmp		dl, 48				; se verifica daca este cifra
 	jl		negative
 
 	cmp		dl, 57
@@ -69,13 +69,13 @@ reverse:
 	mov		ecx, eax
 	dec		ecx
 	mov		edi, ecx
-	sar		ecx, 1					; lungime = lungime/2
+	sar		ecx, 1				; lungime = lungime/2
 	pop 	eax
 	xor		ebx, ebx
 
 create:
-	mov		dl, byte [eax + edi]	; swap cifrele aflate in pozitiile extreme
-	mov		dh, byte [eax + ebx]	; exemplu swap prima cifra cu ultima cifra
+	mov		dl, byte [eax + edi]		; swap cifrele aflate in pozitiile extreme
+	mov		dh, byte [eax + ebx]		; exemplu swap prima cifra cu ultima cifra
 	mov		byte [eax+ ebx], dl
 	mov		byte [eax + edi], dh
 	dec		ecx
@@ -90,7 +90,7 @@ create:
 
 create_tree:
     enter	0, 0
-	push	ebx						; se salveaza toata stiva
+	push	ebx					; se salveaza toata stiva
 	push	ecx
 	push	edx
 	push	edi
@@ -156,8 +156,8 @@ operator:
 	add 	esp, 4					; contine operatorul + nodul drept + nodul stang)
 
 	mov 	[eax], ebx 				; se pune operator in nodul parinte
-	mov 	[eax + 4], esi			; se adauga in nodul stang
-	mov 	[eax + 8], edi			; se adauga in nodul drept
+	mov 	[eax + 4], esi				; se adauga in nodul stang
+	mov 	[eax + 8], edi				; se adauga in nodul drept
 	push 	eax   					; se salveaza tree-ul
 
 	jmp 	extract
